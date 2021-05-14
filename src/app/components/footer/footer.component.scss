@@ -1,0 +1,13 @@
+.row{
+    margin-top: 630px;
+    white-space: nowrap;
+    position: sticky;
+padding-right: 0px;
+z-index: 1000;
+}
+@media  only screen and (width:768px) {
+    .row{
+        position: relative;
+        z-index: 5;
+    }
+}

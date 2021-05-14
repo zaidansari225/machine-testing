@@ -1,0 +1,45 @@
+
+
+    <nav class="navbar navbar-expand-lg  shadow-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Machine Testing</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/main">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/main/add-product">Add Products</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" routerLink="/main/cart" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Cart <sup ><span class="badge  bg-danger text-dark" style="border-radius: 15px;font-size: 1em;">{{Cart.length}}</span>
+                  </sup>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                 <div class="card shadow p-3">
+                     <div class="card-body">
+                         <div class="card-text">Product Name</div>
+                     </div>
+                 </div>
+                    
+                </ul>
+              </li>
+              <li class="nav-item d-flex flex-row-reverse ml-5">
+                <button class="btn btn-outline-danger pull-right float-left" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+            <div class="row justify-content-end d-flex">
+             
+            </div>
+          </div>
+        </div>
+      </nav>
+  

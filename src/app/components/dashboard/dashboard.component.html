@@ -1,0 +1,72 @@
+<div class="row mt-5 justify-content-center">
+    <div class="col-md-4" *ngFor="let product of Product;let i as index;">
+     
+        <div class="card shadow-lg p-3" style="border-radius: 12px;">
+            <div class="card-body">
+              <h5 class="card-title text-center">Product Name:{{product.arr.name}}</h5>
+              <li class="list-group-item text-center">Price:{{product.arr.price}}₹</li>
+              <ul class="list-group list-group-flush">
+              
+              </ul>
+              <p class="card-text text-center">{{product.arr.description}}</p>
+ </div>
+            <div class="card-footer text-center">
+                <button  class="btn btn-primary text-white"  (click)="addToCart(product.arr.id)" [disabled]="product.disable"><i class="fas fa-cart-plus"></i></button>
+                <button class="btn btn-info" data-toggle="modal" (click)="edit(product.arr.id)" [disabled]="product.disable" data-target="#exampleModal"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger " (click)="delete(product.arr.id)" [disabled]="product.disable"><i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg bg-info justify-content-center">
+          <h5 class="modal-title  text-white" id="exampleModalLabel">Update Product</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form  [formGroup]="updateProduct">
+            <div class="row mt-2 justify-content-center">
+                <div class="col-md-10 col-sm-10">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" placeholder="Name...." class="form-control" formControlName="name">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-center">
+                <div class="col-md-10 col-sm-10">
+                    <div class="form-group">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" placeholder="Price..." class="form-control" formControlName="price">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-center">
+                <div class="col-md-10 col-sm-10">
+                    <div class="form-group">
+                        <label for="desc" class="form-label">Desciption</label>
+                        <textarea name="" id="desc" placeholder="Description..." formControlName="desc"  rows="3" class="form-control" ></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-center" style="display: none;">
+              <div class="col-md-10 col-sm-10">
+                  <div class="form-group">
+                      <label for="id" class="form-label">Desciption</label>
+                  <input type="text" formControlName="id" id="id">
+                    </div>
+              </div>
+          </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="submit()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>

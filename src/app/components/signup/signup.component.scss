@@ -1,0 +1,16 @@
+.row{
+    margin-top: 200px;
+}
+.card{
+    border-radius: 12px;
+}
+.ng-valid.ng-dirty:not(SignupForm) {
+    border: solid 2px lightgreen;
+  }
+ 
+  .ng-invalid.ng-dirty:not(SignupForm).form-submitted {
+    border: solid 2px lightcoral;
+  }
+  form{
+      border:none
+  }
